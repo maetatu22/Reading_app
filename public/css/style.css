@@ -29,7 +29,7 @@ header {
 
 /* first-viewクラスからbottom-contentクラスまでの要素の親要素 */
 .contents {
-  background-color: white;
+  background-color: rgb(115, 160, 154);
 }
 
 .first-view{
@@ -48,22 +48,8 @@ header {
   margin: 0 160px;
 }
 
-/* フォーム */
-.bottom-content {
-  height: 800px;
-  margin: 0 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* フッター */
-footer {
-  height: 50px;
-  background-color: #f0f0f0;
-  text-align: center;
-  color: rgba(214, 197, 197, 0.712);
-}
+
 
 .heading {
   width: 50%;
@@ -96,60 +82,83 @@ li{
   border-bottom: 1px solid red;
   width: 200px;
   margin: 40px auto;
+  color: #565a63;
 }
 
-.messages {
-  width: 50vw;
+.book-lists{
+  text-align: center;
+  border: 1px solid #f0f4f9;
+  width: 200px;
   margin: 0 auto;
+  height: 72px;
 }
 
-.message{
+.table-body {
+  background-color: #cbd3d3;
+}
+
+.table-body li {
+  height: 72px;
+  border: 1px solid #f0f4f9;
+  border-top: none;
   display: flex;
-  font-size: 18px;
-  margin: 0 0 16px 70px;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.message-date{
-  padding-right: 40px;
-}
-.stylist-list {
+ 
+.item-data {
   display: flex;
-  justify-content: space-around;
-  margin: 60px 0;
 }
 
-.stylist-image {
-  height: 180px;
+.item-menu {
+  display: flex;
 }
 
-.stylist-name {
-  font-size: 16px;
+.item-menu form {
+  width: 60px;
   text-align: center;
 }
 
-.small-field, .large-field {
-  width: 800px;
+.item-menu form input {
   font-size: 16px;
-  padding: 15px;
-  border: 1px solid #b5aaaa;
-  display: block;
+  color: #bac6d3;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
-.small-field {
-  margin: 0 auto 15px;
+.item-menu form input:hover {
+  color: #ff7f8c;
+  transition: all 0.3s ease;
 }
 
-.large-field {
-  height: 200px;
-  margin: 0 auto 30px;
+.item-menu a {
+  width: 60px;
+  font-size: 16px;
+  color: #bac6d3;
+  text-align: center;
 }
 
-.send {
-  width: 200px;
-  margin: 0 auto;
-  padding: 15px;
-  border: 1px solid white;
-  background-color: lightblue;
-  color:white;
-  display: block;
+.item-menu a:hover {
+  color: #80bcff;
+}
+
+.table-body .id-column {
+  font-size: 16px;
+  color: #565a63;
+}
+
+.table-body .name-column {
+  font-size: 14px;
+  font-weight: 500;
+  color: #565a63;
+}
+.id-column {
+  width: 72px;
+  text-align: center;
 }

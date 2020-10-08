@@ -13,7 +13,7 @@
       <div class="navbar">
         <ul class="nav-lists">
       
-          <li>作成</li>
+          <li><a href="/top">作成</a></li>
         </ul>
       </div>
     </header>
@@ -24,60 +24,30 @@
       </div>
       <div class="upper-content">
         <h2 class="heading-name">読書メモリスト</h2>
+      <% const books = [
+        {id: 1, name: "7つの習慣"},
+        {id: 2, name: "嫌われる勇気"},
+        {id: 3, name: "自分の中に毒を持て"} 
+      ];%>
+      <ul class="table-body">
+        <% books.forEach((book) => { %>
+          <li>
+            <div class="item-data">
+            <span class="id-column"><%= book.id %></span> 
+            <span class="name-column"><%= book.name %></span>
+            </div>
+            <div class="item-menu">
+              <form action="/delete/<%= book.id %>" method="post">
+                <input type="submit" value="削除">
+              </form>
+              <a href = "/edit/<%= book.id %>">編集</a>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+      </div>
+      
+    </div>   
         
-        <ul class="messages">
-          
-          <li class="message">
-            <div class="message-date">2019/10/06</div>
-            <div>【新規のお客さま限定】<b>10％OFF</b>キャンペーン</div>
-          </li>
-          <li class="message">
-            <div class="message-date">2019/10/03</div>
-            <div>うれしい<b>ポイントアップキャンペーン</b></div>
-          </li>
-          <li class="message">
-            <div class="message-date">2019/09/27</div>
-            <div>2020年成人式 ご予約承ります</div>
-          </li>
-          <li class="message">
-            <div class="message-date">2018/10/03</div>
-            <div>うれしい<b>ポイントアップキャンペーン</b></div>
-          </li>
-          <li class="message">
-            <div class="message-date">2018/09/27</div>
-            <div>2019年成人式 ご予約承ります</div>
-          </li>
-        </ul>
-      </div>
-      <div class="middle-content">
-        <h2 class="heading-name">スタイリスト紹介</h2>
-        <ul class="stylist-list">
-          <li>
-            <img src="images/55c813d020e9ab74eabf67ed2047ff9f_w.jpg" alt="staff1" class="stylist-image">
-            <h4 class="stylist-name">鈴木</h4>
-          </li>
-          <li>
-            <img src="images/55c813d020e9ab74eabf67ed2047ff9f_w.jpg" alt="staff2" class="stylist-image">
-            <h4 class="stylist-name">佐藤</h4>
-          </li>
-          <li>
-            <img src="images/55c813d020e9ab74eabf67ed2047ff9f_w.jpg" alt="staff3" class="stylist-image">
-            <h4 class="stylist-name">山田</h4>
-          </li>
-        </ul>
-    </div>
-      <div class="bottom-content">
-        <form class="contact-form">
-          <h2 class="heading-name">メールで予約</h2>
-          <input type="text" placeholder="name" class="small-field">
-          <input type="text" placeholder="e-mail" class="small-field">
-          <textarea placeholder="message" class="large-field"></textarea>
-          <input type="submit" value="SEND" class="send">
-        </form>
-      </div>
-
-    <footer>
-      <p>Copyright(C) Hair OLIVE ALL RIGHTS RESERVED.</p>
-    </footer>
   </body>
 </html>
