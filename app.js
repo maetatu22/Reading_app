@@ -58,4 +58,31 @@ app.post('/delete/:id', (req, res) => {
   );
 });
 
+app.get('/edit/:id', (req, res) => {
+  connection.query(
+    'SELECT * FROM books WHERE id = ?',
+    [req.params.id],
+    (error, results) => {
+      res.render('edit.ejs', {book: results[0]});
+    }
+  );
+});
+
+app.post('/update/:id', (req, res) => {
+  connection.query(
+  'UPDATE books SET name = ? WHERE id = ?',
+  [req.body.bookName, req.params.id],
+  (error, results) => {
+    connection.query(
+      'UPDATE books SET memo = ? WHERE id = ?',
+      [req.body.bookMemo, req.params.id],
+      (error, results) => {
+        res.redirect('/index');
+      }
+    );
+    
+  }
+ ); 
+});
+
 app.listen(3000);

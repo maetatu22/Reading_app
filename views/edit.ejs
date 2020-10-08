@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Reading</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 class="title">Reading</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+      
+          <li><a href="/top">作成</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="contents">
+      <div class="first-view">
+        <img src="/images/bookshelves-932780_1280.webp" alt="トップ画面" class="top-image">
+      </div>
+      <div class="upper-content">
+        <h2 class="heading-name">読書メモリスト</h2>
+
+        <div class="container-header">
+          <h1>メモ</h1>
+        </div>
+        <div class="item-form-wrapper">
+          <p class="form-label">買うもの</p>
+  
+          <form action="/update/<%= book.id %>" method="post" >
+          <input value="<%= book.name %>" type="text" name="bookName" placeholder="本のタイトル">
+          <textarea placeholder="メモ" class="book_memo" name="bookMemo"><%= book.memo %></textarea>
+          <input type="submit" value="更新する">
+          
+          </form>
+        </div>
+        <a href="/index" class="cancel-button">もどる</a>
+      
+      <!-- <ul class="table-body">
+        <%# books.forEach((book) => { %>
+          <li>
+            <div class="item-data">
+            <span class="id-column"><%#= book.id %></span> 
+            <span class="name-column"><%#= book.name %></span>
+            </div>
+            <div class="item-menu">
+              <form action="/delete/<%#= book.id %>" method="post">
+                <input type="submit" value="削除">
+              </form>
+              <a href = "/edit/<%#= book.id %>">編集</a>
+            </div>
+          </li>
+        <!-- <#% }) %> -->
+      <!-- </ul> --> 
+      </div>
+      
+    </div>   
+        
+  </body>
+</html>
