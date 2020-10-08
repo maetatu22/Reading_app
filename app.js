@@ -19,21 +19,22 @@ connection.connect((err) => {
 });
 
 app.get('/', (req, res) => {
-  connection.query(
-    'SELECT * FROM users',
-    (error, results) => {
-      console.log(results);
       res.render('top.ejs');
+    }
+  );
+
+
+app.get('/index', (req, res) => {
+  connection.query(
+    'SELECT * FROM books',
+    (error, results) => {
+      res.render('index.ejs', {books: results});
     }
   );
 });
 
-app.get('/top' , (req, res) => {
-  res.render('top.ejs');
-});
-
-app.get('/index', (req, res) => {
-  res.render('index.ejs');
-});
+app.get('/new', (req, res) => {
+  res.render('new.ejs')
+})
 
 app.listen(3000);
